@@ -15,7 +15,7 @@ const FRAUD_MINT = process.env.VITE_FRAUD_MINT || '2KF9SAvpU2h2ZhczzMLbgx7arkjG8
 const AUTHORITY_KEY_PATH = process.env.AUTHORITY_KEY_PATH || './authority.json';
 
 async function runCranker() {
-    console.log('\x1b[1m\x1b[33m--- FEDERAL CRANKER INITIALIZED ---\x1b[0m');
+    console.log('\x1b[1m\x1b[33m--- SOMALI FLYWHEEL INITIALIZED ---\x1b[0m');
 
     // Load Keypair
     let secretKey: Uint8Array;

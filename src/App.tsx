@@ -55,7 +55,7 @@ const App: React.FC = () => {
         <div className="flex items-center gap-4">
           <div className="flex flex-col leading-none">
             <span className="text-[10px] text-forensic-caution font-black tracking-widest leading-none mb-1">UNCLASSIFIED // FOUO</span>
-            <h2 className="text-xl italic font-black tracking-tighter">FEDERAL MONITOR</h2>
+            <h2 className="text-xl italic font-black tracking-tighter">SOMALI FLYWHEEL</h2>
           </div>
         </div>
         <div className="flex items-center gap-8">
@@ -77,8 +77,8 @@ const App: React.FC = () => {
               <span className="text-[10px] text-slate-300 font-bold uppercase tracking-widest mt-0.5">Location: MN_DAYCARE_SECTOR</span>
             </div>
             <h1 className="text-6xl md:text-8xl lg:text-9xl tracking-tighter italic mb-4">
-              <span className="text-white">FEDERAL</span><br />
-              <span className="text-forensic-caution">$FRAUD</span>
+              <span className="text-white">SOMALI</span><br />
+              <span className="text-forensic-caution">FLYWHEEL</span>
             </h1>
             <div className="max-w-xl">
               <p className="text-sm font-bold text-slate-200 uppercase tracking-widest leading-relaxed mb-8">
@@ -168,7 +168,7 @@ const App: React.FC = () => {
         {/* Footer */}
         <footer className="mt-20 pt-10 border-t-2 border-slate-900 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-[10px] font-bold text-slate-500 uppercase tracking-widest max-w-md">
-            NOTICE: Federal Monitor is an autonomous protocol. All subsidies claimed are final. Trading involves extreme risk of total evidence deletion.
+            NOTICE: Somali Flywheel is an autonomous protocol. All subsidies claimed are final. Trading involves extreme risk of total evidence deletion.
           </div>
           <div className="flex gap-4">
             <span className="redacted px-3 py-1 text-[10px] font-black text-black">CLASSIFIED</span>
