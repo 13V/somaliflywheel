@@ -141,14 +141,14 @@ const App: React.FC = () => {
             </div>
             <h2 className="text-3xl mb-2 italic font-black text-white">THE DIGITAL SHREDDER</h2>
             <p className="text-[11px] text-center font-bold text-slate-300 uppercase tracking-widest mb-8 max-w-xs">
-              Automated execution of $FRAUD buybacks. Irreversible evidence deletion protocol.
+              Automated execution of $SOMALIFW buybacks. Irreversible evidence deletion protocol.
             </p>
             <button
               onClick={triggerShredder}
               disabled={isShredding}
               className={`w-full max-w-xs py-4 font-black ${isShredding ? 'bg-slate-950 border-slate-900 text-slate-800 cursor-not-allowed' : 'btn-forensic'}`}
             >
-              {isShredding ? 'DELETING_EVIDENCE...' : 'SHRED_FRAUD'}
+              {isShredding ? 'DELETING_EVIDENCE...' : 'SHRED_SOMALIFW'}
             </button>
           </div>
 

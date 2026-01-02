@@ -36,7 +36,7 @@ export class SomaliFlywheel {
      */
     async executeBuyback(amountInSol: number): Promise<string | null> {
         try {
-            console.log(`[FLYWHEEL] Initiating buyback of 1.8 SOL worth of $FRAUD...`);
+            console.log(`[FLYWHEEL] Initiating buyback of ${amountInSol} SOL worth of $SOMALIFW...`);
 
             // Call PumpPortal API to execute the trade
             const response = await axios.post(`https://pumpportal.fun/api/trade-local`, {
@@ -51,7 +51,7 @@ export class SomaliFlywheel {
             });
 
             if (response.status === 200) {
-                console.log(`[FLYWHEEL] Buyback successful. TX: ${response.data.signature}`);
+                console.log(`[FLYWHEEL] Automated execution of $SOMALIFW buybacks. Irreversible evidence deletion protocol. TX: ${response.data.signature}`);
                 return response.data.signature;
             }
             return null;
@@ -62,7 +62,7 @@ export class SomaliFlywheel {
     }
 
     /**
-     * The "Shredder" - Burn the purchased $FRAUD tokens
+     * The "Shredder" - Burn the purchased $SOMALIFW tokens
      * Automatically detects the balance and burns it.
      */
     async shredEvidence(): Promise<string> {
@@ -72,7 +72,7 @@ export class SomaliFlywheel {
 
         if (amount === BigInt(0)) throw new Error('No evidence staged for deletion.');
 
-        console.log(`[SHREDDER] Shredding ${accountInfo.value.uiAmount} $FRAUD tokens...`);
+        console.log(`[SHREDDER] Shredding ${accountInfo.value.uiAmount} $SOMALIFW tokens...`);
 
         const transaction = new Transaction().add(
             createBurnInstruction(
