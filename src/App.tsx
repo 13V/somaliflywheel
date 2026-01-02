@@ -77,7 +77,8 @@ const App: React.FC = () => {
               <span className="text-[10px] text-slate-300 font-bold uppercase tracking-widest mt-0.5">Location: MN_DAYCARE_SECTOR</span>
             </div>
             <h1 className="text-6xl md:text-8xl lg:text-9xl tracking-tighter italic mb-4">
-              <span className="text-white">SOMALI</span><br />
+              <span className="text-white font-mono">$SOMALIFW</span>
+              <br />
               <span className="text-forensic-caution">FLYWHEEL</span>
             </h1>
             <div className="max-w-xl">
@@ -116,7 +117,7 @@ const App: React.FC = () => {
               <div className="text-5xl md:text-6xl font-black italic tracking-tighter text-white">
                 {stats.loading ? '???' : stats.totalLaundered > 1000000
                   ? `${(stats.totalLaundered / 1000000).toFixed(1)}M`
-                  : `${(stats.totalLaundered / 1000).toFixed(0)}K`} <span className="text-sm not-italic opacity-30">$FRAUD</span>
+                  : `${(stats.totalLaundered / 1000).toFixed(0)}K`} <span className="text-sm not-italic opacity-30">$SOMALIFW</span>
               </div>
               <div className="mt-4 text-[10px] font-bold text-slate-200 uppercase tracking-widest">
                 {stats.error || 'Protocol: Burn_Execution_Confirmed'}

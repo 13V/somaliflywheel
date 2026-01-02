@@ -8,7 +8,7 @@ import axios from 'axios';
 
 /**
  * The Federal Subsidy Machine Flywheel Logic
- * Ticker: $FRAUD
+ * Ticker: $SOMALIFW
  */
 
 export class SomaliFlywheel {
