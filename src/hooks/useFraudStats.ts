@@ -9,6 +9,7 @@ export const useFraudStats = () => {
     const [stats, setStats] = useState({
         subsidiesClaimed: 0,
         totalLaundered: 0,
+        marketCap: 0,
         loading: true,
         error: null as string | null
     });
@@ -22,10 +23,21 @@ export const useFraudStats = () => {
                 solBalance = await connection.getBalance(new PublicKey(TREASURY_WALLET));
             }
 
-            // Real data only. If we can't fetch it, we show loading or 0.
+            let marketCap = 0;
+            try {
+                const dexResponse = await fetch(`https://api.dexscreener.com/latest/dex/tokens/${FRAUD_MINT}`);
+                const dexData = await dexResponse.json();
+                if (dexData.pairs && dexData.pairs.length > 0) {
+                    marketCap = dexData.pairs[0].fdv || dexData.pairs[0].marketCap || 0;
+                }
+            } catch (dexErr) {
+                console.warn('DexScreener fetch failed', dexErr);
+            }
+
             setStats({
                 subsidiesClaimed: solBalance / 1e9,
-                totalLaundered: 0, // Should be fetched from on-chain history eventually
+                totalLaundered: 0,
+                marketCap: marketCap,
                 loading: false,
                 error: null
             });

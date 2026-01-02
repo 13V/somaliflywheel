@@ -97,13 +97,13 @@ const App: React.FC = () => {
 
           <div className="lg:col-span-4 grid grid-cols-1 gap-6">
             <div className="terminal-panel flex flex-col justify-center border-t-4 border-t-forensic-caution">
-              <h3 className="text-xs text-slate-300 mb-4 opacity-70 uppercase tracking-[0.2em]">Live_Revenue_Inflow</h3>
-              <div className="text-6xl font-black italic tracking-tighter text-white">
-                {stats.loading ? '???' : stats.subsidiesClaimed.toFixed(2)} <span className="text-sm not-italic opacity-50">SOL</span>
+              <h3 className="text-xs text-slate-300 mb-4 opacity-70 uppercase tracking-[0.2em]">Live_Market_Cap</h3>
+              <div className="text-5xl md:text-6xl font-black italic tracking-tighter text-white">
+                {stats.loading ? '???' : `$${(stats.marketCap / 1000).toFixed(1)}K`}
               </div>
               <div className="mt-4 text-[10px] font-bold text-forensic-caution flex items-center gap-2">
                 <div className={`w-2 h-2 rounded-full ${stats.loading ? 'bg-slate-700' : 'bg-forensic-caution animate-ping'}`}></div>
-                {stats.loading ? 'SCANNING_NODE...' : 'FLOW_STABLE // UNCLASSIFIED'}
+                {stats.loading ? 'SCANNING_NODE...' : 'SIGNAL_CONFIRMED // STABLE'}
               </div>
             </div>
             <div className="terminal-panel flex flex-col justify-center">
