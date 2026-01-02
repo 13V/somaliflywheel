@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-forensic-dark text-slate-100 font-mono overflow-x-hidden;
+    /* Industrial Noise Texture */
+    background-image:
+      url("https://www.transparenttextures.com/patterns/pinstriped-dark.png"),
+      radial-gradient(circle at 50% 50%, rgba(18, 18, 22, 0.5) 0%, rgba(10, 10, 12, 1) 100%);
+    background-attachment: fixed;
+  }
+
+  body::after {
+    content: "";
+    @apply fixed inset-0 pointer-events-none opacity-[0.03] z-[100];
+    background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-courier text-white tracking-tighter uppercase font-black italic;
+  }
+}
+
+@layer components {
+  .terminal-panel {
+    @apply bg-black border-2 border-slate-700 rounded-none p-6 shadow-brutalist relative overflow-hidden;
+  }
+
+  .terminal-panel::before {
+    content: "PROPERTY OF FEDERAL MONITOR";
+    @apply absolute top-0 right-0 bg-slate-800 text-[8px] text-white px-2 py-0.5 font-bold tracking-[0.2em];
+  }
+
+  .redacted {
+    @apply bg-white text-white select-none transition-all duration-300 cursor-help;
+  }
+
+  .redacted:hover {
+    @apply bg-transparent text-forensic-caution;
+  }
+
+  .btn-forensic {
+    @apply px-6 py-2 border-2 border-forensic-caution text-forensic-caution font-black uppercase tracking-tighter transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none shadow-brutalist-caution;
+  }
+
+  .scanline {
+    display: none;
+    /* Removing to eliminate blurriness on stream */
+  }
+}
+
+/* Custom Effects */
+.crt-overlay {
+  @apply fixed inset-0 pointer-events-none z-[100] opacity-[0.01];
+  background: radial-gradient(circle at 50% 50%, rgba(18, 16, 16, 0) 0%, rgba(0, 0, 0, 0.4) 100%);
+  background-image:
+    linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  background-size: 100% 2px, 3px 100%;
+}
