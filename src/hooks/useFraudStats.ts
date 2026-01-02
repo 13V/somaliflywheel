@@ -24,19 +24,27 @@ export const useFraudStats = () => {
             }
 
             let marketCap = 0;
+            let totalLaundered = 0;
             try {
+                // Fetch Market Cap
                 const dexResponse = await fetch(`https://api.dexscreener.com/latest/dex/tokens/${FRAUD_MINT}`);
                 const dexData = await dexResponse.json();
                 if (dexData.pairs && dexData.pairs.length > 0) {
                     marketCap = dexData.pairs[0].fdv || dexData.pairs[0].marketCap || 0;
                 }
+
+                // Fetch Total Burned (Total Laundered)
+                // Pump.fun tokens start at 1,000,000,000
+                const supplyInfo = await connection.getTokenSupply(new PublicKey(FRAUD_MINT));
+                const currentSupply = Number(supplyInfo.value.uiAmount);
+                totalLaundered = Math.max(0, 1000000000 - currentSupply);
             } catch (dexErr) {
-                console.warn('DexScreener fetch failed', dexErr);
+                console.warn('Live stats fetch failed', dexErr);
             }
 
             setStats({
                 subsidiesClaimed: solBalance / 1e9,
-                totalLaundered: 0,
+                totalLaundered: totalLaundered,
                 marketCap: marketCap,
                 loading: false,
                 error: null

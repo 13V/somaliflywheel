@@ -88,9 +88,14 @@ const App: React.FC = () => {
               </p>
               <div className="flex gap-4">
                 <button className="btn-forensic h-12 px-8">EXECUTE_SUBSIDY_CLAIM</button>
-                <button className="h-12 px-8 border-2 border-slate-800 text-[10px] font-black uppercase tracking-widest hover:bg-white/5 transition-all">
-                  Browse_Archives
-                </button>
+                <a
+                  href={`https://dexscreener.com/solana/${import.meta.env.VITE_FRAUD_MINT}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="h-12 px-8 border-2 border-slate-800 text-[10px] font-black uppercase tracking-widest hover:bg-white/5 transition-all flex items-center"
+                >
+                  DEEP_SCAN_DEX
+                </a>
               </div>
             </div>
           </div>
@@ -108,11 +113,13 @@ const App: React.FC = () => {
             </div>
             <div className="terminal-panel flex flex-col justify-center">
               <h3 className="text-xs text-slate-300 mb-4 opacity-70 uppercase tracking-[0.2em]">Total_Laundered</h3>
-              <div className="text-6xl font-black italic tracking-tighter text-white">
-                {stats.loading ? '???' : (stats.totalLaundered / 1000).toFixed(0)}K <span className="text-sm not-italic opacity-50">$FRAUD</span>
+              <div className="text-5xl md:text-6xl font-black italic tracking-tighter text-white">
+                {stats.loading ? '???' : stats.totalLaundered > 1000000
+                  ? `${(stats.totalLaundered / 1000000).toFixed(1)}M`
+                  : `${(stats.totalLaundered / 1000).toFixed(0)}K`} <span className="text-sm not-italic opacity-30">$FRAUD</span>
               </div>
-              <div className="mt-4 text-[10px] font-bold text-slate-200">
-                {stats.error || 'LATEST_BATCH: SECURE_BURNT'}
+              <div className="mt-4 text-[10px] font-bold text-slate-200 uppercase tracking-widest">
+                {stats.error || 'Protocol: Burn_Execution_Confirmed'}
               </div>
             </div>
           </div>
