@@ -87,8 +87,7 @@ const App: React.FC = () => {
                 We intercept trading fees and <span className="text-white">SHRED THE EVIDENCE</span> through
                 automated buyback-and-burn cycles. No AI. Just raw on-chain forensics.
               </p>
-              <div className="flex gap-4">
-                <button className="btn-forensic h-12 px-8">EXECUTE_SUBSIDY_CLAIM</button>
+              <div className="flex">
                 <a
                   href={`https://dexscreener.com/solana/${import.meta.env.VITE_FRAUD_MINT}`}
                   target="_blank"
